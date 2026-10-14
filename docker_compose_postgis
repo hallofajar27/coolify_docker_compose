@@ -2,7 +2,6 @@ version: '3.8'
 services:
   postgres:
     image: 'postgis/postgis:15-3.4'
-    container_name: geoserver_postgres
     environment:
       POSTGRES_USER: '${POSTGRES_USER:-postgres}'
       POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-password}'
