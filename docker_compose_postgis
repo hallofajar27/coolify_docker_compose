@@ -2,6 +2,9 @@ version: '3.8'
 services:
   postgres:
     image: 'postgis/postgis:15-3.4'
+    networks:
+      - coolify
+      - default
     environment:
       POSTGRES_USER: '${POSTGRES_USER:-postgres}'
       POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-password}'
@@ -22,3 +25,7 @@ services:
 volumes:
   postgres_data:
     name: postgres_data_volume
+
+networks:
+  coolify:
+    external: true
